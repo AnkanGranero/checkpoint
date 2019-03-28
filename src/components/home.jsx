@@ -93,15 +93,28 @@ export default class Home extends Component {
         const style = {
             display: "flex",
             flexWrap: "wrap",
-            alignContent: "flex-start"
+            alignContent: "flex-start",
+            backgroundImage: "linear-gradient(-90deg,grey, white)"
 
         }
 
         const characterStyle = {
             margin: "10px",
             border: "5px solid black",
-            textAlign: "center"
+            borderRadius: "10px",
+            textAlign: "center",
+            background: "rgb(0, 0, 0, 0.3)",
+
+
         };
+        const imageStyle = {
+            container: "black",
+            padding: "2px",
+            border: "10px solid black",
+            borderRadius: "10%",
+            margin: "10px"
+
+        }
 
 
 
@@ -113,7 +126,7 @@ export default class Home extends Component {
         const characters = this.state.characters
             .map((char) => !char.name ? <p>"loading"</p> : (<div style={characterStyle}
                 onClick={this.openModal.bind(this, char)}>
-                <img src={char.image} alt=""></img>
+                <img src={char.image} style={imageStyle} alt=""></img>
                 <ul>
                     <li>{char.name}</li>
                     <li>Species: {char.species}</li>
@@ -133,7 +146,7 @@ export default class Home extends Component {
             this.state.isLoading ? <div>
                 <h1>IS LOADING...</h1>
                 <img src='../images/morty.gif'></img>
-            </div> : (<div >
+            </div > : (<div >
 
                 {this.state.showModal && <Modal modalChar={modalChar}
                     closeModal={this.closeModal.bind(this)}></Modal>}

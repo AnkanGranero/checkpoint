@@ -33,7 +33,7 @@ class App extends Component {
     return (
 
 
-      <div><div><img src="../images/rick"></img></div>
+      <div><div><img src="./Wabba.png"></img></div>
         <Home></Home></div>)
 
   }
